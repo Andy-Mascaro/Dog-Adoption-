@@ -23,3 +23,13 @@ You will also see any lint errors in the console.
 
 Launches the test runner in the interactive watch mode.\
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+
+//Need to make supabase data base//
+//Need to launch netlify connect secrets//
+//Need to update github with netlify and secrets//
+//Need to make a home page which shows all dogs//
+//Need to make a fetchDogs for the home page//
+//Need to make a dogs page for individual dogs//
+//Need to make a fetch for new dogs to make new dogs//
+//Need to make an edit button to update dog in the details page//
+//Need to make an edit page where you can edit detail or delete//

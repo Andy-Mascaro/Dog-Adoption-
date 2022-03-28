@@ -5,3 +5,9 @@ export async function fetchDogs() {
   console.log(resp);
   return checkError(resp);
 }
+
+export async function fetchDogId(id) {
+  const resp = await client.from('dogs').select('*').match({ id }).single();
+  return checkError(resp);
+}
+

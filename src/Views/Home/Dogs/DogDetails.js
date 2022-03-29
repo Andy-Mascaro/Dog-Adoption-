@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { fetchDogId } from '../../../services/fetchDogs';
 import { useParams } from 'react-router-dom';
+import './DogDetails.css';
 
 export default function DogDetails() {
   const params = useParams();
@@ -16,13 +17,13 @@ export default function DogDetails() {
 
   }, [id]);
 
-  // if (!dogDetail) return <div>Bow Wow</div>;
+
 
   return (
     <div className="dog-id">
       <h1>Hi I am </h1>
       <div key={dogDetail.id}>
-        <h2>Name: {dogDetail.name}</h2>
+        <h2> {dogDetail.name}</h2>
         <img src={dogDetail.image}/>
         <h3>Breed: {dogDetail.breed}</h3>
         <h3>Bio: {dogDetail.bio}</h3>

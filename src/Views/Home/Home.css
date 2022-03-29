@@ -1,0 +1,23 @@
+.home {
+  
+        background-color: darkseagreen;
+    
+    }
+
+
+
+.text{
+    text-align:center;
+}
+
+
+.dog-list {
+    display:flex;
+    justify-content:space-evenly;
+    flex-wrap: wrap;
+    align-items: center;
+    flex-direction: row;
+    margin: 200px;
+    height: 200px;
+    width: 200px;
+}

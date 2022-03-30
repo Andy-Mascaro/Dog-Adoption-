@@ -4,3 +4,16 @@
   flex-direction: row;
   justify-content: space-between;
 }
+
+.active {
+    text-decoration: none;
+    color: plum;
+}
+.out {
+    /* border: 20px; */
+    border-color: cadetblue;
+    /* color: cadetblue; */
+  /* text-decoration: underline; */
+  cursor: pointer;
+  
+}

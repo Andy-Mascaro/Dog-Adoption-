@@ -29,7 +29,7 @@ export default function Home() {
       {dogs.map((info) => (
         <div key={info.id}>
           <Link to={`/dogs/${info.id}`}> 
-            <img src={info.image}/>
+            <img id='img' src={info.image}/>
           </Link>
         </div>
        

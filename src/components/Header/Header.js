@@ -21,7 +21,7 @@ export default function Header({ currentUser, setCurrentUser }) {
       {currentUser && (
         <ul>
           <p>{currentUser}</p>
-          <p className='link' onClick={handleLogout}>Logout</p>
+          <button className='out' onClick={handleLogout}>Logout</button>
         </ul>
       )}
 

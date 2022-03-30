@@ -1,23 +1,16 @@
-.home {
-  
-        background-color: darkseagreen;
-    
-    }
-
-
-
-.text{
-    text-align:center;
+.dog-list {
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%); 
+    height: 10%;
+   
 }
 
 
-.dog-list {
-    display:flex;
-    justify-content:space-evenly;
-    flex-wrap: wrap;
-    align-items: center;
-    flex-direction: row;
-    margin: 200px;
-    height: 200px;
-    width: 200px;
+.text {
+    font-display: flex;
+    text-align: center;
+    
 }

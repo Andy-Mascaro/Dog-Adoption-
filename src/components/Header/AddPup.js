@@ -6,7 +6,6 @@ export default function AddPup({ name, setName, image, setImage, breed, setBreed
 
   return (
     <div>
-      {/* {error && <p>{error}</p>} */}
 
       <label> Name:
         <input type="text" value={name} onChange={(e) => setName(e.target.value)}/> </label>
@@ -23,6 +22,7 @@ export default function AddPup({ name, setName, image, setImage, breed, setBreed
       <label> Age:
         <input type="number" value={age} onChange={(e) => setAge(e.target.value)}/> </label>
       <button onClick={handleSubmit}>Save Dog</button>
+      
 
     </div>
   );

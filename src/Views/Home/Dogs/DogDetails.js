@@ -1,22 +1,38 @@
 import { useState, useEffect } from 'react';
-import { fetchDogId } from '../../../services/fetchDogs';
+import { deleteDog, fetchDogId } from '../../../services/fetchDogs';
 import { useParams } from 'react-router-dom';
 import './DogDetails.css';
+import { Link } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
+
 
 export default function DogDetails() {
   const params = useParams();
   const id = params.id;
   const [dogDetail, setDogDetail] = useState ([null]);
+  const history = useHistory();
+  const [loading, setLoading] = useState('true');
 
   useEffect (() => {
     const fetchData = async () => {
       const data = await fetchDogId(id);
       setDogDetail(data);
+      setTimeout(() => {
+        setLoading(false);
+      }, 200);
     };
     fetchData();
 
   }, [id]);
 
+  const removeDog = async () => {
+    await deleteDog(id);
+    history.push('/');
+
+  };
+  
+
+  if (loading) return <div className='loader'>CHECKING ON DOGS</div>;
 
 
   return (
@@ -29,6 +45,8 @@ export default function DogDetails() {
         <h3>Bio: {dogDetail.bio}</h3>
         <h3>Age: {dogDetail.age}</h3>
       </div>
+      <Link to={`/dogs/${params.id}/edit`}>Edit Dog</Link>
+      <button onClick={removeDog}>Remove Dog</button>
     </div>
   );
 }

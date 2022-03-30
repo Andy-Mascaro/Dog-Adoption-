@@ -4,8 +4,7 @@ export default function Header() {
   return (
     <div className="header">
       <NavLink id="link" exact to ='/'>Home</NavLink>
-      <NavLink id="link" exact to ='/dogs/'>Add Dog</NavLink>
-
+      <NavLink id="link" exact to ='/dogs/'>Admin</NavLink>
     </div>
     
   );

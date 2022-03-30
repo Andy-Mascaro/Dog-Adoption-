@@ -6,7 +6,7 @@ import './NewDogs.css';
 
 export default function Admin() {
   const [name, setName] = useState('');
-  const [image, setImage] = useState(null);
+  const [image, setImage] = useState('');
   const [breed, setBreed] = useState('');
   const [bio, setBio] = useState('');
   const [age, setAge] = useState('');
@@ -18,9 +18,9 @@ export default function Admin() {
     try {
       await newDog({ name, image, breed, bio, age });
       alert('Yeah Pup Added');
-      history.push('/dogs');
+      history.push('/');
     } catch (e) {
-      setError('Oops, something went wrong!');
+      setError('Make sure to fill out all catagories!');
     }
 
     setName('');
@@ -28,6 +28,8 @@ export default function Admin() {
     setBreed('');
     setBio('');
     setAge(0);
+
+    
       
   };
 

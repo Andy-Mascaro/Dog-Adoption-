@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 import { useHistory } from 'react-router-dom';
 
 
-export default function DogDetails() {
+export default function DogDetails({ currentUser }) {
   const params = useParams();
   const id = params.id;
   const [dogDetail, setDogDetail] = useState ([null]);
@@ -45,8 +45,13 @@ export default function DogDetails() {
         <h3>Bio: {dogDetail.bio}</h3>
         <h3>Age: {dogDetail.age}</h3>
       </div>
-      <Link to={`/dogs/${params.id}/edit`}>Edit Dog</Link>
-      <button onClick={removeDog}>Remove Dog</button>
+      {currentUser && (
+        <>
+     
+          <Link to={`/dogs/${params.id}/edit`}>Edit Dog</Link>
+          <button onClick={removeDog}>Remove Dog</button>
+        </>
+      )}
     </div>
   );
 }

@@ -1,0 +1,23 @@
+.dog-list {
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%); 
+    height: 10%;
+   
+}
+
+
+.text {
+    font-display: flex;
+    text-align: center;
+    
+}
+.loader {
+justify-content: center;
+}
+/* .img{
+
+    width: 50% ;
+} */

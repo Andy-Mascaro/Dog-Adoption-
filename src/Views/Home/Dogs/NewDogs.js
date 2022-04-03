@@ -1,0 +1,48 @@
+import { useState } from 'react';
+// import { useHistory } from 'react-router-dom';
+import AddPup from '../../../components/Header/AddPup';
+import { newDog } from '../../../services/fetchDogs'; 
+import './NewDogs.css';
+
+export default function Admin() {
+  const [name, setName] = useState('');
+  const [image, setImage] = useState('');
+  const [breed, setBreed] = useState('');
+  const [bio, setBio] = useState('');
+  const [age, setAge] = useState('');
+  const [error, setError] = useState('');
+  const [message, setMessage] = useState('');
+
+  // const history = useHistory();
+
+  const handleSubmit = async () => {
+    try {
+      await newDog({ name, image, breed, bio, age });
+      setMessage('Yeah Pup Added');
+      // history.push('/');
+    } catch (e) {
+      setError('Make sure to fill out all catagories!');
+    }
+
+    setName('');
+    setImage('');
+    setBreed('');
+    setBio('');
+    setAge(0);
+
+    
+      
+  };
+
+  return (
+    <div>
+      <p>{message}</p>
+      {error && (
+        <p>
+          {error} <span onClick={() => setError('')}></span>
+        </p>
+      )}
+      <AddPup {...{ name, setName, image, setImage, breed, setBreed, bio, setBio, age, setAge, handleSubmit }}/>
+    </div>
+  );
+}

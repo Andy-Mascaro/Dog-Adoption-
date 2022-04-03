@@ -23,6 +23,7 @@ export default function AddPup({ name, setName, image, setImage, breed, setBreed
         <input type="number" value={age} onChange={(e) => setAge(e.target.value)}/> </label>
       <button onClick={handleSubmit}>Save Dog</button>
       
+      
 
     </div>
   );

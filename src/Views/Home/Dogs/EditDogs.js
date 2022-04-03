@@ -13,6 +13,7 @@ export default function EditDogs() {
   const [bio, setBio] = useState('');
   const [age, setAge] = useState('');
   const [error, setError] = useState('');
+  const [message, setMessage] = useState('');
 
   useEffect(() => {
     const fetchData = async () => {
@@ -29,27 +30,34 @@ export default function EditDogs() {
 
 
 
-  
+  const goBack = async () => {
+    history.push(`/dogs/${params.id}`);
+  };
+
   const handleSubmit = async () => {
     try {
       await editPup({ id: params.id, name, image, breed, bio, age });
-      alert('Pup was edited');
-      history.push(`/dogs/${params.id}`);
+      setMessage('Pup was edited');
     } catch (e) {
       setError('Make sure all blanks are filled in.');
       
     }
   };
   return (
+    
     <div className='edit'>
+      <p>{message}</p>
+      
       {error && (
         <p>
           {error} <span onClick={() => setError('')}></span>
         </p>
+        
+        
       )}
     
-      <AddPup {...{ name, setName, image, setImage, breed, setBreed, bio, setBio, age, setAge, handleSubmit }}/>
-      Edit Dog
+      <AddPup {...{ name, setName, image, setImage, breed, setBreed, bio, setBio, age, setAge, handleSubmit, goBack }}/>
+      Edit Dog Page
     </div>
     
   );

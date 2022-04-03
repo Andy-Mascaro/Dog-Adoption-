@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useHistory } from 'react-router-dom';
+// import { useHistory } from 'react-router-dom';
 import AddPup from '../../../components/Header/AddPup';
 import { newDog } from '../../../services/fetchDogs'; 
 import './NewDogs.css';
@@ -11,14 +11,15 @@ export default function Admin() {
   const [bio, setBio] = useState('');
   const [age, setAge] = useState('');
   const [error, setError] = useState('');
+  const [message, setMessage] = useState('');
 
-  const history = useHistory();
+  // const history = useHistory();
 
   const handleSubmit = async () => {
     try {
       await newDog({ name, image, breed, bio, age });
-      alert('Yeah Pup Added');
-      history.push('/');
+      setMessage('Yeah Pup Added');
+      // history.push('/');
     } catch (e) {
       setError('Make sure to fill out all catagories!');
     }
@@ -35,6 +36,7 @@ export default function Admin() {
 
   return (
     <div>
+      <p>{message}</p>
       {error && (
         <p>
           {error} <span onClick={() => setError('')}></span>

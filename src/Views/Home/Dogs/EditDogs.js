@@ -44,21 +44,23 @@ export default function EditDogs() {
     }
   };
   return (
-    
-    <div className='edit'>
-      <p>{message}</p>
+    <> 
+      <div className='edit'>
+        <p>{message}</p>
       
-      {error && (
-        <p>
-          {error} <span onClick={() => setError('')}></span>
-        </p>
+        {error && (
+          <p>
+            {error} <span onClick={() => setError('')}></span>
+          </p>
         
         
-      )}
+        )}
     
-      <AddPup {...{ name, setName, image, setImage, breed, setBreed, bio, setBio, age, setAge, handleSubmit, goBack }}/>
+        <AddPup {...{ name, setName, image, setImage, breed, setBreed, bio, setBio, age, setAge, handleSubmit, goBack }}/>
       Edit Dog Page
-    </div>
+      </div>
     
+      <button onClick={goBack}>Go back to dog</button>
+    </>
   );
 }
